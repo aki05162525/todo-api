@@ -43,6 +43,10 @@ task buildSpringServer(type: org.openapitools.generator.gradle.plugin.tasks.Gene
     apiPackage.set("com.example.todoapi.controller")
     modelPackage.set("com.example.todoapi.model")
     configOptions.set([
-            interfaceOnly: "true"
+            interfaceOnly: "true",
+            useSpringBoot3: "true"
     ])
 }
+
+compileJava.dependsOn tasks.buildSpringServer
+
